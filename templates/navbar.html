@@ -1,0 +1,13 @@
+<!-- templates/navbar.html -->
+<nav class="navbar">
+  <div class="nav-left">
+    <a href="{{ url_for('home') }}" class="brand">MBTI Predictor</a>
+  </div>
+  <div class="nav-right">
+    <a href="{{ url_for('home') }}">🏠 Home</a>
+    <a href="{{ url_for('questions') }}">📝 Test</a>
+    <a href="{{ url_for('result') }}">📊 Results</a>
+    <a href="{{ url_for('career') }}">💼 Careers</a>
+    <a href="{{ url_for('logout') }}">🚪 Logout</a>
+  </div>
+</nav>

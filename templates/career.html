@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Career Suggestions - MBTI Predictor</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/career.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+</head>
+<body>
+  {% include 'navbar.html' %}
+  <div class="career-container">
+    <h2>Your MBTI Type: <span class="highlight">{{ session['mbti_type'] }}</span></h2>
+
+    <div class="career-box">
+      <h3>🎓 Learning Style</h3>
+      <p id="learning-style">Loading...</p>
+    </div>
+
+    <div class="career-box">
+      <h3>💼 Recommended Careers</h3>
+      <ul id="career-list"></ul>
+    </div>
+
+    <button onclick="window.location.href='/home'">🏠 Back to Home</button>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/career.js') }}"></script>
+</body>
+</html>

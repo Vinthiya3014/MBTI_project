@@ -1,0 +1,46 @@
+/* Navbar Styling */
+.navbar {
+  position: fixed;         /* stick to the top */
+  top: 0;
+  left: 0;
+  width: 100%;             /* full width */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  padding: 12px 24px;
+  box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+  z-index: 1000;           /* stay above all other content */
+}
+
+.navbar .brand {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar .nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .nav-right a {
+  margin-left: 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar .nav-right a:hover {
+  color: #ffdd57;
+  transform: translateY(-2px);
+}
+
+/* Ensure page content doesn't hide under navbar */
+body {
+  margin: 0;
+  padding-top: 70px;   /* push content below navbar */
+}

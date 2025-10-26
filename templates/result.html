@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MBTI Result</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/result.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+</head>
+{% include 'navbar.html' %}
+<body>
+  <h2>Your MBTI Result</h2>
+
+  <!-- Chart -->
+  <canvas id="mbtiChart"></canvas>
+
+  <!-- MBTI Type -->
+  <div class="result-box">
+    <h2>Your MBTI Personality Type: 
+      <span class="highlight">{{ mbti_type }}</span>
+    </h2>
+  </div>
+
+  <!-- Scores -->
+  <div class="score-box">
+    <h3>Dimension Scores</h3>
+    <ul>
+      {% for key, value in scores.items() %}
+        <li>{{ key }}: {{ value }}%</li>
+      {% endfor %}
+    </ul>
+  </div>
+
+<a href="{{ url_for('career') }}">
+  <button>Next: Career</button>
+</a>
+
+  <script src="{{ url_for('static', filename='js/result.js') }}"></script>
+</body>
+</html>

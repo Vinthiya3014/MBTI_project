@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - MBTI Predictor</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+</head>
+<body>
+  {% include 'navbar.html' %}
+  <div class="container">
+    {% if session.get('user') %}
+      <!-- Logged in view -->
+      <h1>Welcome, {{ session['user'] }} 👋</h1>
+      <p>This is your MBTI Personality Prediction system.</p>
+
+      <div class="links">
+        <a href="{{ url_for('questions') }}">📝 Take the Personality Test</a>
+        <a href="{{ url_for('result') }}">📊 View Your Result</a>
+        <a href="{{ url_for('career') }}">💼 Career Suggestions</a>
+        <a href="{{ url_for('logout') }}">🚪 Logout</a>
+      </div>
+
+    {% else %}
+      <!-- Landing page view -->
+      <h1>🌟 Welcome to MBTI Personality Predictor</h1>
+      <p>Discover your personality type, learning style, and career path!</p>
+      <div class="links">
+        <a href="{{ url_for('get_started') }}" class="btn">🚀 Get Started</a>
+      </div>
+    {% endif %}
+  </div>
+</body>
+<script src="{{ url_for('static', filename='js/home.js') }}"></script>
+</html>

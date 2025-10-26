@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MBTI Questions</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/questions.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+</head>
+<body onload="loadQuestion()">
+  {% include 'navbar.html' %}
+  <div class="quiz-container">
+    <h2 id="question"></h2>
+    <div class="options">
+      <label><input type="radio" name="answer" value="1"> Strongly Disagree</label><br>
+      <label><input type="radio" name="answer" value="2"> Disagree</label><br>
+      <label><input type="radio" name="answer" value="3"> Neutral</label><br>
+      <label><input type="radio" name="answer" value="4"> Agree</label><br>
+      <label><input type="radio" name="answer" value="5"> Strongly Agree</label><br>
+    </div>
+    <button onclick="nextQuestion()">Next</button>
+  </div>
+  <script src="{{ url_for('static', filename='js/questions.js') }}"></script>
+</body>
+</html>
